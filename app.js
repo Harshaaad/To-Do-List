@@ -26,7 +26,7 @@ app.post('/add-task', (req, res, next) => {
 });
 
 app.post('/del', (req, res, next) => {
-    var toBeDel = parseInt(req.body.taskToDel);
+    var toBeDel = parseInt(req.body.taskToDel); //The body parser reads the taskId as a string. Conversion to int is required.
     
     for (var i = 0; i < tasks.length; i++) {
       if (tasks[i].taskId === toBeDel) {
